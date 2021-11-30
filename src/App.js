@@ -3,10 +3,9 @@ import './App.css';
 import Navbar  from './components/Navbar';
 import News from './components/News';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
-  
 }
  from "react-router-dom";
  
@@ -15,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <Router>
+      <HashRouter>
           
         <Navbar />
           <Switch>
@@ -28,7 +27,7 @@ const App = () => {
             <Route exact path="/sports"><News key="sports" pageSize={pageSize} country="in" category="sports" /></Route>
             <Route exact path="/technology"><News key="technology" pageSize={pageSize} country="in" category="technology" /></Route>
           </Switch>
-       </Router>
+       </HashRouter>
     </div>
   )
 }
