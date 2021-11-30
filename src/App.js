@@ -1,8 +1,9 @@
 import './App.css';
+
 import Navbar  from './components/Navbar';
 import News from './components/News';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
 }
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <HashRouter>
+      <Router basename={process.env.PUBLIC_UR}>
           
         <Navbar />
           <Switch>
@@ -26,7 +27,7 @@ const App = () => {
             <Route exact path="/sports"><News key="sports" pageSize={pageSize} country="in" category="sports" /></Route>
             <Route exact path="/technology"><News key="technology" pageSize={pageSize} country="in" category="technology" /></Route>
           </Switch>
-       </HashRouter>
+       </Router>
     </div>
   )
 }
