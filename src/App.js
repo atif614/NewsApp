@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <HashRouter>
+     <HashRouter basename={process.env.PUBLIC_URL}>
           
         <Navbar />
           <Switch>
