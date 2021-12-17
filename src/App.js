@@ -3,17 +3,18 @@ import './App.css';
 import Navbar  from './components/Navbar';
 import News from './components/News';
 import {
-  HashRouter,
-  Route,
+  Route
 }
- from "react-router-dom";
+  from "react-router-dom";
+  import { HashRouter as Router } from 'react-router-dom';
+
  
 const App = () => {
   const pageSize = 6;
 
   return (
     <div>
-     <HashRouter basename={process.env.PUBLIC_URL}>
+     <Router>
           
         <Navbar />
             <Route exact path="/"><News key="general" pageSize={pageSize} country="in" category="general" /></Route>
@@ -25,7 +26,7 @@ const App = () => {
             <Route exact path="/sports"><News key="sports" pageSize={pageSize} country="in" category="sports" /></Route>
             <Route exact path="/technology"><News key="technology" pageSize={pageSize} country="in" category="technology" /></Route>
           
-       </HashRouter>
+       </Router>
     </div>
   )
 }
