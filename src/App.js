@@ -3,7 +3,7 @@ import './App.css';
 import Navbar  from './components/Navbar';
 import News from './components/News';
 
-import { BrowRouter, Route} from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
  
 const App = () => {
   const pageSize = 6;
